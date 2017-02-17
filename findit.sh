@@ -1,14 +1,13 @@
-#/bin/bash
-
-# Here's the first line of code to write to do the first homework assignment.
-#
-# In /scratch2/scratchdirs/nugent/astro250/hwk1 we have a set of fits files as well as catalogs
-# from these fits files. They are named the same save for the suffix (.fits or .cat). 
-# Some of the .cat files are missing. Write a bash shell script which takes as input 
-# the directory name and prints out the names of the .fits files which are missing their 
-# corresponding .cat files. If the directory does not exist, the code should print
-# out an error statement accordingly.
-#
-
+#!/bin/bash
+# usage: ./findit.sh 
 dir=$1
+
+for i in $(ls $dir*fits)
+do # iterate through the list of fits files
+  prefix=${i%.*}
+  if [ ! -e "$prefix.cat" ]
+  then
+       echo "$prefix.cat"
+  fi
+done
 
