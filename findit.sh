@@ -1,5 +1,7 @@
 #!/bin/bash
-# usage: ./findit.sh 
+# usage (after making executable): 
+# ./findit.sh /scratch2/scratchdirs/nugent/astro250/hwk1/
+
 dir=$1
 
 for i in $(ls $dir*fits)

@@ -1,4 +1,6 @@
 #!/bin/bash
+# also works, but slower, because I'm not taking advantage of the bash "file
+# exists" test.
 
 dir=$1
 
